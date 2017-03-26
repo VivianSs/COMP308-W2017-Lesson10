@@ -1,9 +1,11 @@
+/*
 let mongoose = require('mongoose');
 let passport = require('passport');
 
 // define the user model
 let UserModel = require('../models/users');
 let User = UserModel.User; // alias for User Model - User object
+*/
 
 // firebase requirements
 let firebase = require('../config/firebase.js');

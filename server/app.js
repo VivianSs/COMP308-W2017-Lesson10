@@ -8,11 +8,11 @@ let bodyParser = require('body-parser');
 
 // modules for authentication
 let session = require('express-session');
-
+/*
 let passport = require('passport');
 let passportlocal = require('passport-local');
 let LocalStrategy = passportlocal.Strategy;
-
+*/
 let flash = require('connect-flash'); // displays errors / login messages
 
 // import "mongoose" - required for DB Access
@@ -59,8 +59,11 @@ app.use(session({
 
 // initialize passport and flash
 app.use(flash());
+
+/* 
 app.use(passport.initialize());
 app.use(passport.session());
+*/
 
 // route redirects
 app.use('/', index); // top level links
@@ -69,12 +72,12 @@ app.use('/users', users); // users links - start with /users
 app.use('/api', api); // returns JSON
 
 // Passport User Configuration
-let UserModel = require('./models/users');
+/*let UserModel = require('./models/users');
 let User = UserModel.User; // alias for the User Model - User object
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
+*/
 
 // Handle 404 Errors
   app.use(function(req, res) {
